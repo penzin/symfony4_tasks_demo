@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page-header">
+        <h1>Управление задачами</h1> {% block site_header %}Список задач{% endblock %}
+    </div>
+    
+    <div class="page-content">{% block page_content %}{% endblock %}</div>
+        
+    {% block site_footer %}
+    
+    {% endblock %}
+{% endblock %}

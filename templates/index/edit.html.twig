@@ -1,0 +1,37 @@
+{% extends 'page.html.twig' %}
+
+{% block title %} - Редактирование задачи{% endblock %}
+{% block head_scripts %}<script src={{ asset('vendors/jquery/jquery-3.3.1.min.js') }}></script>{% endblock %}
+{% block site_header %}<a href="/" class="btn btn-info">Вернуться к списку задач</a>{% endblock %}
+
+{% block page_content %}
+    <h5>Редактирование задачи "{{ task.name }}"</h5>
+    
+    {{ form_start(form) }}
+    
+    {{ form_label(form.name, null, { 'label_attr': {'class': 'mt_15'} }) }}
+    {{ form_widget(form.name, { 'attr': {'class': 'form-control w_300'} }) }}
+    {{ form_errors(form.name) }}
+    
+    {{ form_label(form.priority, null, { 'label_attr': {'class': 'mt_15'} }) }}
+    {{ form_widget(form.priority, { 'attr': {'class': 'form-control w_300'} }) }}
+    {{ form_errors(form.priority) }}
+
+    {{ form_label(form.state, null, { 'label_attr': {'class': 'mt_15'} }) }}
+    {{ form_widget(form.state, { 'attr': {'class': 'form-control w_300'} }) }}
+    {{ form_errors(form.state) }}       
+    
+    {{ form_label(form.idTag, null, { 'label_attr': {'class': 'mt_15'} }) }}
+    {{ form_widget(form.idTag) }}
+    {{ form_errors(form.idTag) }}      
+    
+    {{ form_end(form) }}
+    <div class="result-container alert">test</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var taskId = '{{ task.id }}';
+    </script>
+    <script src="{{ asset('js/editForm.js') }}"></script>
+{% endblock %}

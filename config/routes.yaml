@@ -1,0 +1,16 @@
+index:
+    path: /
+    controller: App\Controller\TaskController::index
+
+add_task:
+    path: /tasks/add/
+    controller: App\Controller\TaskController::add
+    
+edit_task:
+    path: /tasks/{id}/edit/
+    methods: [GET, POST]
+    controller: App\Controller\TaskController::edit
+    
+generate_tags:
+    path: /tags/generate/
+    controller: App\Controller\TagController::generate  

@@ -1,0 +1,31 @@
+{% extends 'page.html.twig' %}
+
+{% block site_header %}<a href="/tasks/add/" class="btn btn-info">Новая задача</a>{% endblock %}
+{% block title %} - Список задач{% endblock %}
+
+
+{% block page_content %}
+    <h5>Список задач</h5>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Наименование задачи</th>
+                <th>Приоритет</th>
+                <th>Статус</th>
+                <th>Теги</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.name }}</td>
+                    <td>{{ task.priorityLabel }}</td>
+                    <td>{{ task.stateLabel }}</td>
+                    <td>{{ task.tagsString }}</td>
+                    <td><a href="/tasks/{{ task.id }}/edit/" class="btn btn-success">Редактировать</a></td>
+                </tr>            
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
