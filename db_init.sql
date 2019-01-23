@@ -1,4 +1,3 @@
---
 -- 
 -- Отключение внешних ключей
 -- 
@@ -36,6 +35,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB,
+AVG_ROW_LENGTH = 1820,
 CHARACTER SET utf8mb4,
 COLLATE utf8mb4_general_ci;
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS tags (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB,
-AVG_ROW_LENGTH = 8192,
+AVG_ROW_LENGTH = 2048,
 CHARACTER SET utf8mb4,
 COLLATE utf8mb4_general_ci;
 
@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS tasks_tags (
   PRIMARY KEY (id_task, id_tag)
 )
 ENGINE = INNODB,
+AVG_ROW_LENGTH = 1489,
 CHARACTER SET utf8mb4,
 COLLATE utf8mb4_general_ci;
 
@@ -77,7 +78,6 @@ REFERENCES tags (id) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE tasks_tags
 ADD CONSTRAINT FK_tasks_tags_tasks_id FOREIGN KEY (id_task)
 REFERENCES tasks (id) ON DELETE CASCADE ON UPDATE CASCADE;
-
 -- 
 -- Восстановить предыдущий режим SQL (SQL mode)
 -- 
