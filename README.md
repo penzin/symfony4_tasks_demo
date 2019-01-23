@@ -32,4 +32,4 @@ DATABASE_URL=mysql://username:password@127.0.0.1:3306/tasks_db
 127.0.0.1 tasksdemo
 ```
 
-После этого пример будет доступен по адресу http://tasksdemo/
+После данных действий и перезагрузки web-сервера, решение будет доступно по адресу http://tasksdemo/
