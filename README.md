@@ -10,7 +10,7 @@
 Будет создана база **tasks_db** и соответствующие таблицы.
 
 4) В конфиге подключения к БД указать верные данные Вашего Mysql сервера:
-файл **tasks_demo/.env**
+файл **tasks_demo/.env** (либо создать **tasks_demo/.env.local**)
 ```
 DATABASE_URL=mysql://username:password@127.0.0.1:3306/tasks_db
 ```
