@@ -2,7 +2,7 @@
 
 Установка
 -
-1) ```git pull https://github.com/penzin/tasks_demo.git```
+1) ```git clone https://github.com/penzin/tasks_demo.git```
 
 2) В директории **tasks_demo** выполнить: ```php composer install``` для установки необходимых пакетов
 
